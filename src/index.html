@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="index.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
       rel="stylesheet"
@@ -24,10 +25,12 @@
           <div class="input-wrapper">
             <label for="card-number">Número do cartão</label>
             <input
+              oninput="cardNumberMask()"
               type="text"
               id="card-number"
               name="card-number"
               required
+              maxlength="19"
               placeholder="**** **** **** ****"
             />
           </div>
@@ -48,7 +51,9 @@
               id="expiration-date"
               name="expiration-date"
               required
+              maxlength="5"
               placeholder="mm/aa"
+              oninput="expirationDateMask()"
             />
           </div>
           <div class="input-wrapper">
@@ -56,7 +61,15 @@
               CVV
               <span class="material-symbols-outlined"> help </span></label
             >
-            <input type="text" id="cvv" name="cvv" required placeholder="***" />
+            <input
+              type="text"
+              id="cvv"
+              name="cvv"
+              required
+              placeholder="***"
+              maxlength="3"
+              oninput="cvvMask()"
+            />
           </div>
         </div>
         <img src="./assets/card.png" alt="Cartão de Crédito" />
