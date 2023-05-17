@@ -152,3 +152,65 @@ input:hover {
 input:focus {
   outline: 1.5px solid #9333ea;
 }
+
+#card-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 168px;
+  background-color: #111827;
+  border-radius: 16px;
+  padding: 16px 24px;
+  background-image: url("assets/card.png");
+  background-size: cover;
+  background-position: center;
+  grid-area: image;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.1));
+  cursor: default;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.top-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 24px;
+}
+
+#card-number {
+  font-size: 24px;
+  font-weight: 400;
+  color: #f9fafb;
+  text-align: justify;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+.cardholder-expiration {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+#cardholder,
+#expiration-date {
+  font-size: 16px;
+  color: #f9fafb;
+  text-align: center;
+  opacity: 0.5;
+}

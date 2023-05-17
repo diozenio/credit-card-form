@@ -23,11 +23,12 @@
       <form action="#" class="form">
         <div class="form-group">
           <div class="input-wrapper">
-            <label for="card-number">Número do cartão</label>
+            <label for="card-number-input">Número do cartão</label>
             <input
-              oninput="cardNumberMask()"
+              oninput="handleCardNumberInput()"
+              onchange="validateCardNumber(value)"
               type="text"
-              id="card-number"
+              id="card-number-input"
               name="card-number"
               required
               maxlength="19"
@@ -35,44 +36,58 @@
             />
           </div>
           <div class="input-wrapper">
-            <label for="cardholder">Nome do titular</label>
+            <label for="cardholder-input">Nome do titular</label>
             <input
               type="text"
-              id="cardholder"
+              id="cardholder-input"
               name="cardholder"
               required
               placeholder="Nome como está no cartão"
+              maxlength="26"
+              oninput="handleCardHolderInput()"
             />
           </div>
           <div class="input-wrapper">
-            <label for="expiration-date">Validade</label>
+            <label for="expiration-date-input">Validade</label>
             <input
               type="text"
-              id="expiration-date"
+              id="expiration-date-input"
               name="expiration-date"
               required
               maxlength="5"
               placeholder="mm/aa"
-              oninput="expirationDateMask()"
+              oninput="handleExpirationDateInput()"
             />
           </div>
           <div class="input-wrapper">
-            <label for="cvv">
+            <label for="cvv-input">
               CVV
               <span class="material-symbols-outlined"> help </span></label
             >
             <input
               type="text"
-              id="cvv"
+              id="cvv-input"
               name="cvv"
               required
               placeholder="***"
               maxlength="3"
-              oninput="cvvMask()"
+              oninput="handleCvvInput()"
             />
           </div>
         </div>
-        <img src="./assets/card.png" alt="Cartão de Crédito" />
+        <div id="card-image" class="card-image">
+          <header class="top-info">
+            <img src="assets/visa-logo.svg" alt="Logo da VISA" />
+            <img src="assets/ContactlessPayment.svg" alt="Logo da VISA" />
+          </header>
+          <div class="bottom-info">
+            <h1 id="card-number">**** **** **** ****</h1>
+            <div class="cardholder-expiration">
+              <p id="cardholder">Seu nome aqui</p>
+              <p id="expiration-date">mm/aa</p>
+            </div>
+          </div>
+        </div>
         <p class="catchphrase">
           <span class="material-symbols-outlined"> verified_user </span> Seus
           dados estão seguros
